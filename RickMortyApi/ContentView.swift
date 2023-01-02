@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-  @StateObject var viewModel  = ViewModel()
+  @StateObject var viewModel  = ViewModel(url: "https://rickandmortyapi.com/api/character/1")
     
     var body: some View {
         VStack {
@@ -24,7 +24,9 @@ struct ContentView: View {
         }
         .padding()
         .onAppear{
-            viewModel.executeRequest()
+            Task {
+                await viewModel.executeRequest()
+            }
         }
     }
 }

@@ -12,6 +12,7 @@
 		80417DE229633DFF00AAC0E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80417DE129633DFF00AAC0E4 /* Assets.xcassets */; };
 		80417DE529633DFF00AAC0E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80417DE429633DFF00AAC0E4 /* Preview Assets.xcassets */; };
 		80417DEC2963427300AAC0E4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80417DEB2963427300AAC0E4 /* ViewModel.swift */; };
+		80417DEE2963578100AAC0E4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80417DED2963578100AAC0E4 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		80417DE129633DFF00AAC0E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80417DE429633DFF00AAC0E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		80417DEB2963427300AAC0E4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		80417DED2963578100AAC0E4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				80417DDD29633DFD00AAC0E4 /* RickMortyApiApp.swift */,
 				80417DDF29633DFD00AAC0E4 /* ContentView.swift */,
 				80417DEB2963427300AAC0E4 /* ViewModel.swift */,
+				80417DED2963578100AAC0E4 /* Model.swift */,
 				80417DE129633DFF00AAC0E4 /* Assets.xcassets */,
 				80417DE329633DFF00AAC0E4 /* Preview Content */,
 			);
@@ -143,6 +146,7 @@
 				80417DE029633DFD00AAC0E4 /* ContentView.swift in Sources */,
 				80417DEC2963427300AAC0E4 /* ViewModel.swift in Sources */,
 				80417DDE29633DFD00AAC0E4 /* RickMortyApiApp.swift in Sources */,
+				80417DEE2963578100AAC0E4 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
