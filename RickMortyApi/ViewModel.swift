@@ -44,7 +44,27 @@ struct EpisodeModel : Codable {
     let name: String
 }
 
-final class ViewModel {
+struct LocationModel : Codable {
+    let id: Int
+    let name : String
+    let dimension : String
+}
+
+struct CharacterBasicInfo {
+    let name: String
+    let image: URL?
+    let firstEpisodeTitle: String
+    let dimension: String
+    
+    static var empty: Self {
+        .init(name: "", image: nil, firstEpisodeTitle: "", dimension: "")
+    }
+    
+}
+
+final class ViewModel : ObservableObject {
+    @Published var characterBasicInfo : CharacterBasicInfo = .empty
+    
     func executeRequest() {
         let characterURL = URL(string: "https://rickandmortyapi.com/api/character/1")!
         
@@ -56,6 +76,20 @@ final class ViewModel {
             URLSession.shared.dataTask(with: firstEpisode) { data, response, error in
                 let episodeModel = try! JSONDecoder().decode(EpisodeModel.self, from: data!)
                 print("Episode Model \(episodeModel)")
+                
+                let characterLocationModel = URL(string: characterModel.locationURL)!
+                URLSession.shared.dataTask(with: characterLocationModel) { data, response, error in
+                    let locationModel = try! JSONDecoder().decode(LocationModel.self, from: data!)
+                    print("Location Model \(locationModel)")
+                    
+                    DispatchQueue.main.async {
+                        self.characterBasicInfo = .init(name: characterModel.name,
+                                                        image: URL(string: characterModel.image)!,
+                                                        firstEpisodeTitle: episodeModel.name,
+                                                        dimension: locationModel.dimension)
+                    }
+                    
+                }.resume()
                 
             }.resume()
             
