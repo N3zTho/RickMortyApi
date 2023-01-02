@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let viewModel  = ViewModel()
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello!")
+            Text("Hello Ernesto")
         }
         .padding()
+        .onAppear{
+            viewModel.executeRequest()
+        }
     }
 }
 
